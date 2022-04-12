@@ -43,6 +43,9 @@ device-manage-sdk         项目部署目录
 │  ├─Exceptions           异常类目录
 │  ├─Contracts            接口类目录
 │  ├─Utility              工具目录
+│  ├─Gateway              网关目录，需要多协议设备
+│  ├─Middleware           中间件目录，需要多中间件适配
+│  ├─device               设备后台管理目录
 ├─Bin                     应用bin文件目录
 │  ├─app.sh               应用shell脚本
 │  ├─easyswoole.service   easyswoole开机启动配置文件
