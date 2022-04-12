@@ -45,7 +45,8 @@ device-manage-sdk         项目部署目录
 │  ├─Utility              工具目录
 │  ├─Gateway              网关目录，需要多协议适配
 │  ├─Middleware           中间件目录，需要多中间件适配
-│  ├─device               设备后台管理目录
+│  ├─Device               设备后台管理目录
+│  ├─Api                  设备管理模块向外提供接口目录，向外提供统一的接口，或者通过函数调用或者通过http协议访问，适配多种方式调用设备管理模块的服务
 ├─Bin                     应用bin文件目录
 │  ├─app.sh               应用shell脚本
 │  ├─easyswoole.service   easyswoole开机启动配置文件
