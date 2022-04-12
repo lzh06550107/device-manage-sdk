@@ -36,3 +36,28 @@
 
 ## 目录结构
 
+~~~
+device-manage-sdk         项目部署目录
+├─src                     应用目录
+│  ├─Common               通用常量和函数目录
+│  ├─Exceptions           异常类目录
+│  ├─Contracts            接口类目录
+│  ├─Utility              工具目录
+├─Bin                     应用bin文件目录
+│  ├─app.sh               应用shell脚本
+│  ├─easyswoole.service   easyswoole开机启动配置文件
+├─Runtime                 运行时目录
+│  ├─Log                  日志保存目录
+│  ├─Temp                 临时信息、缓存目录
+├─UnitTest                单元测试目录
+├─vendor                  第三方类库目录
+├─.php-cs-fixer.dist.php  php-cs-fixer代码格式规范工具配置文件
+├─composer.json           Composer配置文件
+├─composer.lock           Composer锁定文件
+├─bootstrap.php           预处理或者是预定义
+├─EasySwooleEvent.php     框架全局事件
+├─easyswoole              框架管理脚本
+├─phpunit.php             单元测试入口文件
+├─dev.php                 开发配置文件
+├─produce.php             生产配置文件
+~~~
