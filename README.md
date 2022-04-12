@@ -268,3 +268,9 @@ CREATE TABLE `mymk_univ_update_classtime` (
       KEY `execute_status_index` (`execute_status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='课时下发表';
 ~~~
+
+设计要点：
+
+- 必须是InnoDB引擎，该引擎支持行锁；
+- 必须使用索引查询，如 status 或者 execute_status 只有使用索引查询才会使用行锁，否则会锁表；
+
