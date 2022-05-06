@@ -38,7 +38,7 @@ mqtt/Configure/{设备UUID}
 // version：升级版本
 // DownloadURL：下载固件的url
 // MD5Sum：固件的MD5值
-// file_size：固件大小，单位为字节
+// fileSize：固件大小，单位为字节
 ```
 
 4. 设备在收到固件升级的消息后，根据 URL 下载固件，下载的过程中设备会通过 Topic `mqtt/Ack/{设备UUID}` 不断的上报下载进度，上报的内容如下：
