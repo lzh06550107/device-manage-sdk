@@ -30,8 +30,8 @@ mqtt/Configure/{设备UUID}
 {
      "Action": "upgradeRequest",
      "MD5Sum": "36eb5951179db14a63****a37a9322a2",
-     "DownloadURL": "https://ota-1255858890.cos.ap-guangzhou.myqcloud.com",
-     "fileSize": 708482,
+     "DownloadURL": "https://oss-1255858890.aliyun.com/",
+     "fileSize": 709482,
      "version": "0.2"
 }
 // Action：消息类型为 upgradeRequest
