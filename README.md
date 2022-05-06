@@ -271,6 +271,9 @@ CREATE TABLE `mymk_univ_update_classtime` (
 
 设计要点：
 
+- 对于多进程多协程的锁，如何选择，这里选择数据库的悲观锁，该锁跨多个进程协程有效；
 - 必须是InnoDB引擎，该引擎支持行锁；
 - 必须使用索引查询，如 status 或者 execute_status 只有使用索引查询才会使用行锁，否则会锁表；
+
+## 中间件层设计
 
