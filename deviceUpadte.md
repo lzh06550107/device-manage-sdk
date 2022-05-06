@@ -31,7 +31,7 @@ mqtt/Configure/{设备UUID}
      "Action": "upgradeRequest",
      "MD5Sum": "36eb5951179db14a63****a37a9322a2",
      "DownloadURL": "https://ota-1255858890.cos.ap-guangzhou.myqcloud.com",
-     "file_size": 708482,
+     "fileSize": 708482,
      "version": "0.2"
 }
 // Action：消息类型为 upgradeRequest
@@ -48,8 +48,8 @@ mqtt/Configure/{设备UUID}
      "progress":{
        "state":"downloading",
        "percent":"10",
-       "result_code":"0",
-       "result_msg":""
+       "resultCode":"0",
+       "resultMsg":""
      },
      "version": "0.2"
 }
@@ -64,8 +64,8 @@ mqtt/Configure/{设备UUID}
      "Action": "reportProgress",
      "progress":{
        "state":"burning",
-       "result_code":"0",
-       "result_msg":""
+       "resultCode":"0",
+       "resultMsg":""
      },
      "version": "0.2"
 }
@@ -79,8 +79,8 @@ mqtt/Configure/{设备UUID}
      "Action": "reportProgress",
      "progress":{
         "state":"done",
-        "result_code":"0",
-        "result_msg":""
+        "resultCode":"0",
+        "resultMsg":""
      },
      "version": "0.2"
 }
@@ -93,17 +93,21 @@ mqtt/Configure/{设备UUID}
     "Action": "reportProgress",
     "progress":{
        "state":"fail",
-       "result_code":"-1",
-       "result_msg":"time_out"
+       "resultCode":"-1",
+       "resultMsg":"time_out"
     },
     "version": "0.2"
 }
 // state：状态为失败
-// result_code：错误码，-1：下载超时；-2：文件不存在；-3：签名过期；-4:MD5不匹配；-5：更新固件失败
-// result_msg：错误消息
+// resultCode：错误码，-1：下载超时；-2：文件不存在；-3：签名过期；-4:MD5不匹配；-5：更新固件失败
+// resultMsg：错误消息
 ```
 
-## 升级固件断点续传
+# 要点
+
+## 上报设备版本，可以保证设备升级中途关机问题或者升级成功但消息未达问题，当设备重启后会上报当前版本，如果版本不对，则升级失败，否则升级成功。
+
+## 升级固件断点续传，可以保证弱网环境下载固件总是失败问题。
 物联网设备会出现在部分场景处于弱网环境，在此场景下连接将会不稳定，固件下载会出现中断的情况。如果每次都从 0 偏移开始下载固件，则在弱网环境有可能一直无法完成全部固件下载，因此固件的断点续传功能特别必要，关于断点续传的具体说明如下。
 
 - 断点续传指从文件上次中断的地方开始重新下载或上传，要实现断点续传的功能，需要设备端记录固件下载的中断位置，同时记录下载固件的 MD5、文件大小、版本信息。
